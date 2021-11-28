@@ -14,5 +14,5 @@ Windows users, just manually navigate and run ``` main.py ``` from your day of c
 ## Example
 ```
 $ ./run.sh 1
-Running solution located at... /home/user/PycharmProjects/aoc-2021/src/day_01
+Running solution located at... .../aoc-2021/src/day_01
 ```
