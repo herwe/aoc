@@ -7,14 +7,14 @@ winning_bingo_number = 0
 def part_one():
     new_arr = []
 
-    with open("test_input.txt", "r") as file:
+    with open("input.txt", "r") as file:
         drawn_numbers = file.readline().split(',')
 
-    with open("test_input.txt", "r") as file:
+    with open("input.txt", "r") as file:
         lines = file.read()
 
     lines = [line.replace(' ', 'BREAK') or line.replace('\n', 'BREAK') for line in lines]
-    lines = [line for x, line in enumerate(lines) if x > 71]
+    lines = [line for x, line in enumerate(lines) if x > 290]
     checker = ''
     for i in lines:
         if i.isdigit():
@@ -33,9 +33,9 @@ def part_one():
             bingo_numbers.append(temp)
             counter = 0
             temp = []
+
     non_marked_bingo_numbers = bingo_numbers
     mark_bingo_tiles(drawn_numbers)
-    # print(bingo_numbers)
 
 
 def mark_bingo_tiles(drawn_numbers):
@@ -78,7 +78,7 @@ def check_if_bingo(number_to_be_marked, index):
 
     board_count = 0
     board_index = 0
-    #loop_and_mark(board_count, board_index, bingo_numbers, number_to_be_marked)
+    loop_and_mark(board_count, board_index, bingo_numbers, number_to_be_marked)
 
 
 def loop_and_mark(board_count, board_index, lst, number_to_be_marked):
