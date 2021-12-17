@@ -1,24 +1,38 @@
-
-def run():
+def run(s, solution_range):
     with open("input.txt", "r") as f:
         initial_state = (f.readline().split()[0])
         fish = [int(i) for i in initial_state if i.isdigit()]
 
-    append_counter = 0
-    for i in range(80):
-        for index, number in enumerate(fish):
-            if number == 0:
-                fish[index] = 6
-                append_counter += 1
-            else:
-                fish[index] -= 1
+    duplicates = {i: fish.count(i) for i in fish}
 
-        for j in range(append_counter):
-            fish.append(8)
-        append_counter = 0
+    for i in range(9):
+        if duplicates.get(i) is None:
+            duplicates[i] = 0
 
-    print(f"Day 6, part 1 answer is: {len(fish)}")
+    for _ in range(solution_range):
+        temp0 = duplicates[0]
+        temp = duplicates[8]
+        duplicates[8] = temp0
+        temp2 = duplicates[7]
+        duplicates[7] = temp
+        temp3 = duplicates[6]
+        duplicates[6] = temp2
+        temp4 = duplicates[5]
+        duplicates[5] = temp3
+        duplicates[6] = temp0 + temp2
+        temp5 = duplicates[4]
+        duplicates[4] = temp4
+        temp6 = duplicates[3]
+        duplicates[3] = temp5
+        temp7 = duplicates[2]
+        duplicates[2] = temp6
+        temp8 = duplicates[1]
+        duplicates[1] = temp7
+        duplicates[0] = temp8
+
+    print(s, sum(duplicates.values()))
 
 
 if __name__ == "__main__":
-    run()
+    run("Day 6, part one is", 80)
+    run("Day 6, part two is", 256)
