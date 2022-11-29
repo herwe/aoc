@@ -3,7 +3,7 @@
 
 
 ## General info
-These are my solutions for aoc-2021.
+These are my solutions for advent of code.
 		
 ## Setup
 For Linux and OSX users, pass an argument when running ``` run.sh ``` that corresponds to what day you want to run the solution for.
