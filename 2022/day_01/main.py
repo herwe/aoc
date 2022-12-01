@@ -11,7 +11,7 @@ def part_one():
                 current_sum = 0
             else:
                 current_sum += int(line)
-        print(biggest_sum)
+        print(f"Day 1, solution 1 {biggest_sum}")
 
 def part_two():
     with open("input.txt", "r") as f:
@@ -24,7 +24,7 @@ def part_two():
             else:
                 current_sum += int(line)
         elves_sorted = sorted(calories, reverse=True)
-        print(elves_sorted[0] + elves_sorted[1] + elves_sorted[2])
+        print(f"Day 1, solution 2{elves_sorted[0] + elves_sorted[1] + elves_sorted[2]}")
 
 
 if __name__ == "__main__":
